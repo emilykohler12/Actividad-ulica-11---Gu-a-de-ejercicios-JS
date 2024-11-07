@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Estado de Cuentas</title>
+    <style>
+        .container {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Estado de Cuentas</h2>
+        <button onclick="procesarCuentas()">Comenzar</button>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        function procesarCuentas() {
+            let sumaSaldosAcreedores = 0;
+            let resultado = "";
+
+            while (true) {
+                let numeroCuenta = parseInt(prompt("Ingrese número de cuenta (negativo para finalizar):"));
+                if (numeroCuenta < 0) break;
+
+                let nombreCliente = prompt("Ingrese nombre del cliente:");
+                let saldo = parseFloat(prompt("Ingrese el saldo actual:"));
+                
+                let estadoCuenta;
+                if (saldo > 0) {
+                    estadoCuenta = "Acreedor";
+                    sumaSaldosAcreedores += saldo;
+                } else if (saldo < 0) {
+                    estadoCuenta = "Deudor";
+                } else {
+                    estadoCuenta = "Nulo";
+                }
+
+                resultado += `Número de cuenta: ${numeroCuenta}, Cliente: ${nombreCliente}, Estado: ${estadoCuenta}<br>`;
+            }
+
+            resultado += `<br>Suma total de saldos acreedores: ${sumaSaldosAcreedores}`;
+            document.getElementById("resultado").innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elevar al Cubo</title>
+</head>
+<body>
+    <h1>Ingresa un número para elevarlo al cubo</h1>
+    <input type="number" id="numero">
+    <button onclick="elevarAlCubo()">Calcular</button>
+
+    <script>
+        function elevarAlCubo() {
+            const numero = document.getElementById("numero").value;
+            alert(`El cubo de ${numero} es ${Math.pow(numero, 3)}`);
+        }
+    </script>
+</body>
+</html>

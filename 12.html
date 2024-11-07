@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Determinar Dígitos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Determinar Cantidad de Dígitos</h2>
+    <form id="digitosForm">
+        <label for="numero">Ingrese un número positivo de 1 o 2 dígitos:</label>
+        <input type="number" id="numero" required><br>
+        <button type="button" onclick="verificarDigitos()">Verificar</button>
+    </form>
+
+    <h3>Resultado:</h3>
+    <p id="resultado"></p>
+
+    <script>
+        function verificarDigitos() {
+            // Obtener y convertir el número a entero
+            var numero = parseInt(document.getElementById("numero").value);
+
+            // Determinar si tiene uno o dos dígitos
+            if (numero >= 1 && numero <= 9) {
+                document.getElementById("resultado").innerHTML = "El número tiene un dígito";
+            } else if (numero >= 10 && numero <= 99) {
+                document.getElementById("resultado").innerHTML = "El número tiene dos dígitos";
+            } else {
+                document.getElementById("resultado").innerHTML = "El número ingresado no es válido";
+            }
+        }
+    </script>
+</body>
+</html>

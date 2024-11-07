@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mostrar Rango</title>
+</head>
+<body>
+    <h2>Mostrar Rango</h2>
+    <button onclick="mostrarRango()">Mostrar Rango</button>
+    <p id="resultado"></p>
+
+    <script>
+        function mostrarRango() {
+            let menor = parseInt(prompt("Ingrese el número menor:"));
+            let mayor = parseInt(prompt("Ingrese el número mayor:"));
+            let resultado = "Rango: ";
+            for (let i = menor; i <= mayor; i++) {
+                resultado += i + " ";
+            }
+            document.getElementById("resultado").innerText = resultado;
+        }
+    </script>
+</body>
+</html>

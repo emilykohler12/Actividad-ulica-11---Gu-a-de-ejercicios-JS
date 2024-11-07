@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Comparar Listas</title>
+</head>
+<body>
+    <h2>Comparar valor acumulado de dos listas</h2>
+    <button onclick="compararListas()">Ingresar Listas</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function compararListas() {
+            let sumaLista1 = 0;
+            let sumaLista2 = 0;
+
+            for (let i = 1; i <= 3; i++) {
+                sumaLista1 += parseFloat(prompt(`Ingrese el valor ${i} de la Lista 1:`));
+            }
+
+            for (let i = 1; i <= 3; i++) {
+                sumaLista2 += parseFloat(prompt(`Ingrese el valor ${i} de la Lista 2:`));
+            }
+
+            let mensaje;
+            if (sumaLista1 > sumaLista2) {
+                mensaje = "Lista 1 mayor";
+            } else if (sumaLista1 < sumaLista2) {
+                mensaje = "Lista 2 mayor";
+            } else {
+                mensaje = "Listas iguales";
+            }
+
+            document.getElementById("resultado").innerHTML = mensaje;
+        }
+    </script>
+</body>
+</html>

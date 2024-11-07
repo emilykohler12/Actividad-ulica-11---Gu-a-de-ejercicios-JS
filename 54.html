@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ingreso de Nombres</title>
+</head>
+<body>
+    <h2>Ingrese nombres (Escriba "Fin" para terminar)</h2>
+    <button onclick="ingresarNombres()">Comenzar</button>
+    <p id="resultado"></p>
+
+    <script>
+        function ingresarNombres() {
+            let nombres = [];
+            let nombre;
+
+            do {
+                nombre = prompt("Ingrese un nombre (o escriba 'Fin' para terminar):");
+                if (nombre !== "Fin") nombres.push(nombre);
+            } while (nombre !== "Fin");
+
+            document.getElementById("resultado").innerText = `Cantidad de nombres ingresados: ${nombres.length}`;
+        }
+    </script>
+</body>
+</html>

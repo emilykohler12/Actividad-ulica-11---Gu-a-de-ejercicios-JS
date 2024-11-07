@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Clasificación de Puntos en el Plano</title>
+    <style>
+        .container {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Clasificación de Puntos en el Plano</h2>
+        <button onclick="clasificarPuntos()">Ingresar Puntos</button>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        function clasificarPuntos() {
+            let primerCuadrante = 0;
+            let segundoCuadrante = 0;
+            let tercerCuadrante = 0;
+            let cuartoCuadrante = 0;
+            
+            let cantidadPuntos = parseInt(prompt("Ingrese la cantidad de puntos a procesar:"));
+
+            for (let i = 1; i <= cantidadPuntos; i++) {
+                let x = parseFloat(prompt(`Punto ${i} - Ingrese la coordenada X:`));
+                let y = parseFloat(prompt(`Punto ${i} - Ingrese la coordenada Y:`));
+
+                if (x > 0 && y > 0) {
+                    primerCuadrante++;
+                } else if (x < 0 && y > 0) {
+                    segundoCuadrante++;
+                } else if (x < 0 && y < 0) {
+                    tercerCuadrante++;
+                } else if (x > 0 && y < 0) {
+                    cuartoCuadrante++;
+                }
+            }
+
+            document.getElementById("resultado").innerHTML = `
+                Puntos en el primer cuadrante: ${primerCuadrante}<br>
+                Puntos en el segundo cuadrante: ${segundoCuadrante}<br>
+                Puntos en el tercer cuadrante: ${tercerCuadrante}<br>
+                Puntos en el cuarto cuadrante: ${cuartoCuadrante}
+            `;
+        }
+    </script>
+</body>
+</html>

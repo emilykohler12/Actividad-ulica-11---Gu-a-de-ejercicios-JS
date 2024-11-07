@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Días y Meses</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Días de la Semana y Meses del Año</h2>
+    <button onclick="mostrarDiasYMeses()">Mostrar Días y Meses</button>
+    <div id="resultado"></div>
+</div>
+
+<script>
+    let diasSemana = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
+    let meses = new Array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+
+    function mostrarDiasYMeses() {
+        let resultado = "Días de la Semana:<br>";
+        diasSemana.forEach(dia => resultado += dia + "<br>");
+
+        resultado += "<br>Meses del Año:<br>";
+        meses.forEach(mes => resultado += mes + "<br>");
+
+        document.getElementById('resultado').innerHTML = resultado;
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Múltiplos de 8</title>
+</head>
+<body>
+    <h2>Múltiplos de 8 hasta 500</h2>
+    <button onclick="mostrarMultiplos()">Mostrar Múltiplos</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function mostrarMultiplos() {
+            var multiplos = "";
+            for (var i = 8; i <= 500; i += 8) {
+                multiplos += i + " ";
+            }
+            document.getElementById("resultado").innerHTML = multiplos;
+        }
+    </script>
+</body>
+</html>

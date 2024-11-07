@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Verificar Correo Electrónico</title>
+</head>
+<body>
+    <h2>Verificar si el correo contiene '@'</h2>
+    <button onclick="verificarCorreo()">Comenzar</button>
+    <p id="resultado"></p>
+
+    <script>
+        function verificarCorreo() {
+            const correo = prompt("Ingrese una dirección de correo:");
+            const contieneArroba = correo.includes("@");
+
+            document.getElementById("resultado").innerText = contieneArroba 
+                ? "El correo contiene '@'." 
+                : "El correo no contiene '@'.";
+        }
+    </script>
+</body>
+</html>

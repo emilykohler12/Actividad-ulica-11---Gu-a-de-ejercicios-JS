@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Importe pizzas</title>
+</head>
+<body>
+    <h2>Calcular el importe de las pizzas</h2>
+
+    <label>Tipo de Pizza:</label>
+    <select id="tipoPizza">
+        <option value="4">Queso - $4</option>
+        <option value="6">Jamón y Queso - $6</option>
+        <option value="10">Especial - $10</option>
+    </select><br>
+
+    <label>Cantidad:</label>
+    <input type="number" id="cantidad" placeholder="Cantidad"><br>
+
+    <button onclick="calcularTotal()">Calcular Importe</button>
+    <input type="text" id="importeTotal" readonly placeholder="Importe Total">
+
+    <script>
+        function calcularTotal() {
+            const precio = parseInt(document.getElementById("tipoPizza").value);
+            const cantidad = parseInt(document.getElementById("cantidad").value);
+            const total = precio * cantidad;
+            document.getElementById("importeTotal").value = `$${total}`;
+        }
+    </script>
+</body>
+</html>

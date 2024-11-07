@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concatenar Nombre y Apellido</title>
+</head>
+<body>
+    <h1>Ingresa tu nombre y apellido</h1>
+    <input type="text" id="nombre" placeholder="Nombre">
+    <input type="text" id="apellido" placeholder="Apellido">
+    <button onclick="concatenarNombre()">Concatenar</button>
+    <input type="text" id="nombreCompleto" readonly>
+
+    <script>
+        function concatenarNombre() {
+            const nombre = document.getElementById("nombre").value;
+            const apellido = document.getElementById("apellido").value;
+            document.getElementById("nombreCompleto").value = `${nombre} ${apellido}`;
+        }
+    </script>
+</body>
+</html>

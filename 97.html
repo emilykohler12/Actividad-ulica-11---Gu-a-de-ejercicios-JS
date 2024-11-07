@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+</head>
+<body>
+    <script>
+        const coordenada = prompt("Ingresa la coordenada de un punto en formato (999,999):");
+
+        const regex = /^\(\d{1,3},\d{1,3}\)$/;
+
+        if (regex.test(coordenada)) {
+            alert("Coordenada válida.");
+        } else {
+            alert("Formato de coordenada no válido.");
+        }
+    </script>
+</body>
+</html>

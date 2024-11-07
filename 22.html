@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Contar Notas de Alumnos</title>
+</head>
+<body>
+    <h2>Contar notas mayores o iguales a 7 y menores a 7</h2>
+    <button onclick="contarNotas()">Ingresar Notas</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function contarNotas() {
+            let mayores = 0;
+            let menores = 0;
+
+            for (let i = 0; i < 10; i++) {
+                let nota = parseFloat(prompt(`Ingrese la nota del alumno ${i + 1}:`));
+                if (nota >= 7) {
+                    mayores++;
+                } else {
+                    menores++;
+                }
+            }
+
+            document.getElementById("resultado").innerHTML = `Notas >= 7: ${mayores}<br>Notas < 7: ${menores}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+</head>
+<body>
+    <script>
+        const numero = prompt("Ingresa un número de 3 dígitos enteros y 2 decimales (ejemplo: 123.45):");
+
+        const regex = /^\d{1,3}\.\d{2}$/;
+
+        if (regex.test(numero)) {
+            alert("Número válido.");
+        } else {
+            alert("Número no válido. Asegúrate de ingresar 3 dígitos enteros y 2 decimales.");
+        }
+    </script>
+</body>
+</html>

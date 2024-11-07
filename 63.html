@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mayor de Dos Números</title>
+</head>
+<body>
+    <h1>Ingresa dos números</h1>
+    <input type="number" id="numero1" placeholder="Número 1">
+    <input type="number" id="numero2" placeholder="Número 2">
+    <button onclick="mostrarMayor()">Mostrar Mayor</button>
+    <p id="resultado"></p>
+
+    <script>
+        function mostrarMayor() {
+            const numero1 = parseFloat(document.getElementById("numero1").value);
+            const numero2 = parseFloat(document.getElementById("numero2").value);
+            const mayor = numero1 > numero2 ? numero1 : numero2;
+            document.getElementById("resultado").textContent = `El mayor es: ${mayor}`;
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clasificación de Números</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin: 20px;
+        }
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Clasificar Números en Vectores</h2>
+    <button onclick="clasificarNumeros()">Generar y Clasificar Números</button>
+    <div id="resultado"></div>
+</div>
+
+<script>
+    function clasificarNumeros() {
+        let vector = Array.from({ length: 10 }, () => Math.floor(Math.random() * 500) + 1);
+        let menores250 = vector.filter(num => num < 250);
+        let mayoresIguales250 = vector.filter(num => num >= 250);
+
+        let resultado = `Vector original: ${vector.join(", ")}<br>`;
+        resultado += `Vector menores a 250 (tamaño: ${menores250.length}): ${menores250.join(", ")}<br>`;
+        resultado += `Vector mayores o iguales a 250 (tamaño: ${mayoresIguales250.length}): ${mayoresIguales250.join(", ")}<br>`;
+
+        document.getElementById('resultado').innerHTML = resultado;
+    }
+</script>
+
+</body>
+</html>

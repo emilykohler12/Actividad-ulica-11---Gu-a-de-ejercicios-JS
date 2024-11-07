@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Puntos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin: 20px;
+        }
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Participante del Juego</h2>
+    <button onclick="participante.imprimir()">Mostrar Datos</button>
+    <button onclick="participante.aumentarPuntos(1200); participante.imprimir(); participante.verificarSiGano();">Aumentar Puntos y Verificar</button>
+    <p id="resultado"></p>
+</div>
+
+<script>
+    let participante = {
+        nombre: "Jugador1",
+        puntos: 0,
+
+        imprimir() {
+            document.getElementById('resultado').innerHTML = "Nombre: " + this.nombre + "<br>Puntos: " + this.puntos;
+        },
+
+        aumentarPuntos(cantidad) {
+            this.puntos += cantidad;
+        },
+
+        verificarSiGano() {
+            let mensaje = this.puntos > 1000 ? this.nombre + " ha ganado el juego." : this.nombre + " aún no ha ganado.";
+            document.getElementById('resultado').innerHTML += "<br>" + mensaje;
+        }
+    };
+</script>
+
+</body>
+</html>

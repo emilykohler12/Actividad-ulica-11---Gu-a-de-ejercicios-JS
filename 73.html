@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificación de Clave</title>
+</head>
+<body>
+    <h2>Iniciar Sesión</h2>
+
+    <label>Nombre de usuario:</label>
+    <input type="text" id="nombreUsuario"><br>
+
+    <label>Clave:</label>
+    <input type="password" id="clave" onblur="verificarClave()"><br>
+
+    <script>
+        function verificarClave() {
+            const clave = document.getElementById("clave").value;
+            if (clave.length < 7 || clave.length > 20) {
+                alert("La clave debe tener entre 7 y 20 caracteres.");
+            }
+        }
+    </script>
+</body>
+</html>

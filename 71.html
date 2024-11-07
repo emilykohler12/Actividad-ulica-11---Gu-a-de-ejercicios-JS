@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificación de Edad</title>
+</head>
+<body>
+    <h2>¿Eres mayor de 18 años?</h2>
+
+    <label><input type="radio" name="edad" value="si"> Sí</label><br>
+    <label><input type="radio" name="edad" value="no"> No</label><br>
+
+    <button onclick="verificarEdad()">Verificar</button>
+
+    <script>
+        function verificarEdad() {
+            const edadSeleccionada = document.querySelector('input[name="edad"]:checked');
+            if (!edadSeleccionada) {
+                alert("Por favor, selecciona una opción.");
+                return;
+            }
+
+            if (edadSeleccionada.value === "si") {
+                alert("Puedes ingresar al sitio.");
+            } else {
+                alert("No puedes ingresar al sitio.");
+            }
+        }
+    </script>
+</body>
+</html>

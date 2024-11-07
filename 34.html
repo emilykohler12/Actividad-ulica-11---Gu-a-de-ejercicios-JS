@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Suma de los Últimos 5 Valores</title>
+    <style>
+        .container {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Suma de los Últimos 5 Valores</h2>
+        <button onclick="sumarUltimos5()">Comenzar</button>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        function sumarUltimos5() {
+            let valores = [];
+
+            for (let i = 0; i < 10; i++) {
+                valores.push(parseInt(prompt(`Ingrese el valor ${i + 1}:`)));
+            }
+
+            let suma = valores.slice(-5).reduce((a, b) => a + b, 0);
+            document.getElementById("resultado").innerText = `La suma de los últimos 5 valores es: ${suma}`;
+        }
+    </script>
+</body>
+</html>

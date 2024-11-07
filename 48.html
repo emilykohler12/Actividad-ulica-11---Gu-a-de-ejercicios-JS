@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cuatrimestre del Año</title>
+</head>
+<body>
+    <h2>Determinar Cuatrimestre</h2>
+    <button onclick="mostrarCuatrimestre()">Mostrar Cuatrimestre</button>
+    <p id="resultado"></p>
+
+    <script>
+        function mostrarCuatrimestre() {
+            const mes = new Date().getMonth() + 1; // Obtener el mes actual (1-12)
+            let cuatrimestre;
+
+            if (mes >= 1 && mes <= 4) {
+                cuatrimestre = "Primer cuatrimestre";
+            } else if (mes >= 5 && mes <= 8) {
+                cuatrimestre = "Segundo cuatrimestre";
+            } else {
+                cuatrimestre = "Tercer cuatrimestre";
+            }
+
+            document.getElementById("resultado").innerText = "Estamos en el " + cuatrimestre;
+        }
+    </script>
+</body>
+</html>

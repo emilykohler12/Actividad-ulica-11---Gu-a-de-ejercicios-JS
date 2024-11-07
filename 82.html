@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persona de Mayor Edad</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin: 20px;
+        }
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Persona de Mayor Edad</h2>
+    <button onclick="mostrarMayorEdad()">Mostrar Persona Mayor</button>
+    <p id="resultado"></p>
+</div>
+
+<script>
+    class Persona {
+        constructor(nombre, edad) {
+            this.nombre = nombre;
+            this.edad = edad;
+        }
+    }
+
+    function mostrarMayorEdad() {
+        let personas = [
+            new Persona("Carlos", 34),
+            new Persona("Lucía", 42),
+            new Persona("Mateo", 42),
+            new Persona("Ana", 38)
+        ];
+
+        let mayorEdad = Math.max(...personas.map(persona => persona.edad));
+        let personasMayorEdad = personas.filter(persona => persona.edad === mayorEdad);
+
+        let resultado = "La(s) persona(s) de mayor edad es(son):<br>";
+        personasMayorEdad.forEach(persona => {
+            resultado += persona.nombre + " con " + persona.edad + " años<br>";
+        });
+        if (personasMayorEdad.length > 1) {
+            resultado += "Hay más de una persona con la edad mayor.";
+        }
+        document.getElementById('resultado').innerHTML = resultado;
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Serie de Términos</title>
+</head>
+<body>
+    <h2>Serie de Términos: 5 - 10 - 15 - 20 - ...</h2>
+    <button onclick="imprimirSerie()">Mostrar Serie</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function imprimirSerie() {
+            let serie = "";
+            for (let i = 1; i <= 20; i++) {
+                serie += (5 * i) + " ";
+            }
+            document.getElementById("resultado").innerHTML = serie.trim();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Suma de Dos Vectores</title>
+</head>
+<body>
+    <h2>Suma de Dos Vectores</h2>
+    <button onclick="sumarVectores()">Sumar Vectores</button>
+    <p id="resultado"></p>
+
+    <script>
+        function sumarVectores() {
+            const tamaño = parseInt(prompt("Ingrese el tamaño de los vectores:"));
+            let vector1 = [];
+            let vector2 = [];
+            let vectorSuma = [];
+
+            for (let i = 0; i < tamaño; i++) {
+                vector1.push(parseInt(prompt(`Ingrese el valor del elemento ${i + 1} del vector 1:`)));
+                vector2.push(parseInt(prompt(`Ingrese el valor del elemento ${i + 1} del vector 2:`)));
+                vectorSuma.push(vector1[i] + vector2[i]);
+            }
+
+            document.getElementById("resultado").innerText = `Suma de los vectores: ${vectorSuma.join(", ")}`;
+        }
+    </script>
+</body>
+</html>

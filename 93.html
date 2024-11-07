@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    <script>
+        function funcionPrincipal(parametro) {
+            const variableLocal = "Valor local";
+
+            function funcionAnidada(parametroAnidado) {
+                console.log("Parámetro de la función principal:", parametro);
+                console.log("Parámetro de la función anidada:", parametroAnidado);
+                console.log("Variable local de la función principal:", variableLocal);
+            }
+
+            funcionAnidada("Parámetro anidado");
+        }
+
+        funcionPrincipal("Parámetro principal");
+    </script>
+</body>
+</html>

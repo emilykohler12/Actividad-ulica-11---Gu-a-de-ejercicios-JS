@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precio de Pizza</title>
+</head>
+<body>
+    <h1>Selecciona una pizza</h1>
+    <select id="pizza" onchange="mostrarPrecio()">
+        <option value="4">Jamón y Queso - $4</option>
+        <option value="5">Muzzarella - $5</option>
+        <option value="6">Morrones - $6</option>
+    </select>
+    <input type="text" id="precio" placeholder="Precio" readonly>
+
+    <script>
+        function mostrarPrecio() {
+            const precio = document.getElementById("pizza").value;
+            document.getElementById("precio").value = `$${precio}`;
+        }
+    </script>
+</body>
+</html>

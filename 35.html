@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tabla del 5</title>
+    <style>
+        .container {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Tabla de Multiplicar del 5</h2>
+        <button onclick="tablaDel5()">Mostrar Tabla</button>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        function tablaDel5() {
+            let resultado = "";
+
+            for (let i = 5; i <= 50; i += 5) {
+                resultado += `5 x ${i / 5} = ${i}<br>`;
+            }
+
+            document.getElementById("resultado").innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premios de Rifa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin: 20px;
+        }
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Premios de Rifa</h2>
+    <button onclick="generarPremios()">Generar Premios</button>
+    <div id="resultado"></div>
+</div>
+
+<script>
+    function generarPremios() {
+        let vector = Array(1000).fill(0);
+        let premios = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000];
+        
+        premios.forEach(premio => {
+            let posicion;
+            do {
+                posicion = Math.floor(Math.random() * 1000);
+            } while (vector[posicion] !== 0);
+            vector[posicion] = premio;
+        });
+
+        let resultado = "Números con premio y montos:<br>";
+        vector.forEach((premio, indice) => {
+            if (premio > 0) {
+                resultado += `Número ${indice}: Premio ${premio}<br>`;
+            }
+        });
+
+        document.getElementById('resultado').innerHTML = resultado;
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen multiple choice</title>
+</head>
+<body>
+    <h2>Examen múltiple choice</h2>
+
+    <p>1. ¿Cuál es la capital de Francia?</p>
+    <select id="pregunta1">
+        <option value="incorrecto">Madrid</option>
+        <option value="incorrecto">Roma</option>
+        <option value="correcto">París</option>
+    </select><br>
+
+    <p>2. ¿Cuál es el río más largo del mundo?</p>
+    <select id="pregunta2">
+        <option value="incorrecto">Nilo</option>
+        <option value="correcto">Amazonas</option>
+        <option value="incorrecto">Danubio</option>
+    </select><br>
+
+    <p>3. ¿Cuál es el océano más grande?</p>
+    <select id="pregunta3">
+        <option value="correcto">Océano Pacífico</option>
+        <option value="incorrecto">Océano Atlántico</option>
+        <option value="incorrecto">Océano Índico</option>
+    </select><br>
+
+    <p>4. ¿En qué continente se encuentra Egipto?</p>
+    <select id="pregunta4">
+        <option value="incorrecto">Asia</option>
+        <option value="correcto">África</option>
+        <option value="incorrecto">Europa</option>
+    </select><br>
+
+    <button onclick="calcularResultados()">Calcular Resultados</button>
+    <p id="resultado5"></p>
+
+    <script>
+        function calcularResultados() {
+            let correctas = 0;
+            let incorrectas = 0;
+
+            for (let i = 1; i <= 4; i++) {
+                const respuesta = document.getElementById(`pregunta${i}`).value;
+                if (respuesta === "correcto") {
+                    correctas++;
+                } else {
+                    incorrectas++;
+                }
+            }
+
+            document.getElementById("resultado5").textContent = `Correctas: ${correctas}, Incorrectas: ${incorrectas}`;
+        }
+    </script>
+</body>
+</html>

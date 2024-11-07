@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Vector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin: 20px;
+        }
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Modificar Vector</h2>
+    <button onclick="modificarVector()">Modificar Vector</button>
+    <div id="resultado"></div>
+</div>
+
+<script>
+    function modificarVector() {
+        let vector = [1, 2, 3, 2, 4, 5, 2];
+        
+        let nuevoVector = [];
+        vector.forEach(num => {
+            if (num === 2) {
+                nuevoVector.push(1, 1);
+            } else {
+                nuevoVector.push(num);
+            }
+        });
+
+        document.getElementById('resultado').innerHTML = "Vector modificado: " + nuevoVector.join(", ");
+    }
+</script>
+
+</body>
+</html>

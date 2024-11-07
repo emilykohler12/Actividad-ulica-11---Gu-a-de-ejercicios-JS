@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Vector de 8 Elementos</title>
+</head>
+<body>
+    <h2>Procesar Vector de 8 Elementos</h2>
+    <button onclick="procesarVector()">Procesar Vector</button>
+    <p id="resultado"></p>
+
+    <script>
+        function procesarVector() {
+            let vector = [];
+            for (let i = 0; i < 8; i++) {
+                vector.push(parseInt(prompt(`Ingrese el valor del elemento ${i + 1}:`)));
+            }
+
+            const acumulado = vector.reduce((acc, val) => acc + val, 0);
+            const acumuladoMayores36 = vector.filter(val => val > 36).reduce((acc, val) => acc + val, 0);
+            const cantidadMayores50 = vector.filter(val => val > 50).length;
+
+            document.getElementById("resultado").innerHTML = `
+                Acumulado total: ${acumulado} <br>
+                Acumulado de valores mayores a 36: ${acumuladoMayores36} <br>
+                Cantidad de valores mayores a 50: ${cantidadMayores50}
+            `;
+        }
+    </script>
+</body>
+</html>

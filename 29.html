@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Suma de Valores</title>
+    <style>
+        .container {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Suma de Valores</h2>
+        <button onclick="sumarValores()">Comenzar</button>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        function sumarValores() {
+            let suma = 0;
+            let valor;
+
+            do {
+                valor = parseInt(prompt("Ingrese un valor (9999 para finalizar):"));
+                if (valor !== 9999) {
+                    suma += valor;
+                }
+            } while (valor !== 9999);
+
+            let mensaje;
+            if (suma === 0) {
+                mensaje = "El valor acumulado es cero.";
+            } else if (suma > 0) {
+                mensaje = "El valor acumulado es mayor a cero.";
+            } else {
+                mensaje = "El valor acumulado es menor a cero.";
+            }
+
+            document.getElementById("resultado").innerText = `Suma total: ${suma}. ${mensaje}`;
+        }
+    </script>
+</body>
+</html>

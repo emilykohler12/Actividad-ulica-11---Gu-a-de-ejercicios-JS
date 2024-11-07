@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Operación con Valores Iguales</title>
+</head>
+<body>
+    <h2>Operación con Valores Iguales</h2>
+    <label for="valor1">Valor 1:</label>
+    <input type="number" id="valor1" required><br>
+    <label for="valor2">Valor 2:</label>
+    <input type="number" id="valor2" required><br>
+    <label for="valor3">Valor 3:</label>
+    <input type="number" id="valor3" required><br>
+    <button onclick="calcularOperacion()">Calcular</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcularOperacion() {
+            var valor1 = parseInt(document.getElementById("valor1").value);
+            var valor2 = parseInt(document.getElementById("valor2").value);
+            var valor3 = parseInt(document.getElementById("valor3").value);
+
+            if (valor1 === valor2 && valor2 === valor3) {
+                var resultado = (valor1 + valor2) * valor3;
+                document.getElementById("resultado").innerHTML = "Resultado: " + resultado;
+            } else {
+                document.getElementById("resultado").innerHTML = "Los valores no son iguales";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Elevar al Cubo</title>
+</head>
+<body>
+    <h2>Elevar un Número a la Tercera Potencia</h2>
+    <button onclick="elevarAlCubo()">Elevar al Cubo</button>
+    <p id="resultado"></p>
+
+    <script>
+        function elevarAlCubo() {
+            const numero = parseInt(prompt("Ingrese un número:"));
+            const cubo = Math.pow(numero, 3);
+            document.getElementById("resultado").innerText = `El número ${numero} elevado al cubo es: ${cubo}`;
+        }
+    </script>
+</body>
+</html>

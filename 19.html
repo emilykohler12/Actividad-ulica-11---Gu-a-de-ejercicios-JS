@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Traducir Palabra</title>
+</head>
+<body>
+    <h2>Traducir palabra al inglés</h2>
+    <label for="palabra">Ingrese una palabra (casa, mesa, perro, gato):</label>
+    <input type="text" id="palabra" required><br>
+    <button onclick="traducirPalabra()">Traducir</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function traducirPalabra() {
+            var palabra = document.getElementById("palabra").value.toLowerCase();
+            var traduccion;
+
+            switch (palabra) {
+                case 'casa':
+                    traduccion = 'house';
+                    break;
+                case 'mesa':
+                    traduccion = 'table';
+                    break;
+                case 'perro':
+                    traduccion = 'dog';
+                    break;
+                case 'gato':
+                    traduccion = 'cat';
+                    break;
+                default:
+                    traduccion = 'Palabra no reconocida';
+                    break;
+            }
+
+            document.getElementById("resultado").innerHTML = traduccion;
+        }
+    </script>
+</body>
+</html>

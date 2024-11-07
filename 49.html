@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Fecha Formato</title>
+</head>
+<body>
+    <h2>Mostrar Fecha en Formato</h2>
+    <button onclick="mostrarFecha()">Mostrar Fecha</button>
+    <p id="resultado"></p>
+
+    <script>
+        function mostrarFecha() {
+            const fecha = new Date();
+            const diasSemana = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+            const meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+
+            const diaSemana = diasSemana[fecha.getDay()];
+            const dia = fecha.getDate();
+            const mes = meses[fecha.getMonth()];
+            const año = fecha.getFullYear();
+
+            const resultado = `Hoy es ${diaSemana} ${dia} de ${mes} de ${año}`;
+            document.getElementById("resultado").innerText = resultado;
+        }
+    </script>
+</body>
+</html>

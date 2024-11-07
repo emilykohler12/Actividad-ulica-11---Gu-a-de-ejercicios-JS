@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de Servicios de Correo</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+        }
+        td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+        td:hover {
+            background-color: lightblue;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Servicios de Correo Electrónico</h2>
+
+    <table>
+        <tr>
+            <td onmouseover="cambiarColor(this)" onmouseout="restaurarColor(this)">
+                <a href="https://mail.google.com" target="_blank">Gmail</a>
+            </td>
+            <td onmouseover="cambiarColor(this)" onmouseout="restaurarColor(this)">
+                <a href="https://www.outlook.com" target="_blank">Hotmail</a>
+            </td>
+            <td onmouseover="cambiarColor(this)" onmouseout="restaurarColor(this)">
+                <a href="https://mail.yahoo.com" target="_blank">Yahoo</a>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        function cambiarColor(celda) {
+            celda.style.backgroundColor = "lightgreen";
+        }
+
+        function restaurarColor(celda) {
+            celda.style.backgroundColor = "";
+        }
+    </script>
+</body>
+</html>

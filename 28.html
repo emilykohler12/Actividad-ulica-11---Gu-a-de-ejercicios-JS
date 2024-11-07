@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Contar Pares e Impares</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Contar Pares e Impares</h2>
+        <button onclick="contarParesImpares()">Ingresar Números</button>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        function contarParesImpares() {
+            let pares = 0;
+            let impares = 0;
+
+            for (let i = 0; i < 5; i++) {
+                let numero = parseInt(prompt(`Ingrese el número ${i + 1}:`));
+                
+                if (numero % 2 === 0) {
+                    pares++;
+                } else {
+                    impares++;
+                }
+            }
+
+            document.getElementById("resultado").innerHTML = 
+                `Cantidad de números pares: ${pares}<br>Cantidad de números impares: ${impares}`;
+        }
+    </script>
+</body>
+</html>

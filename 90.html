@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imprimir Personas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin: 20px;
+        }
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Imprimir Personas</h2>
+    <button onclick="imprimirPersonas()">Imprimir</button>
+    <div id="resultado"></div>
+</div>
+
+<script>
+    function imprimirPersonas() {
+        let personas = ["Carlos, 25 años", "Ana, 30 años", "Luis, 28 años", "Marta, 35 años", "Pedro, 40 años"];
+        let resultado = personas.join("<br>");
+
+        document.getElementById('resultado').innerHTML = resultado;
+    }
+</script>
+
+</body>
+</html>

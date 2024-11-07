@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botones</title>
+</head>
+<body>
+    <h1>Presiona un botón</h1>
+    <button onclick="mostrarMensaje(1)">1</button>
+    <button onclick="mostrarMensaje(2)">2</button>
+    <button onclick="mostrarMensaje(3)">3</button>
+    <p id="mensaje"></p>
+
+    <script>
+        function mostrarMensaje(numero) {
+            document.getElementById("mensaje").textContent = `Se presionó el botón ${numero}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordenar Sueldos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin: 20px;
+        }
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Ordenar Sueldos</h2>
+    <button onclick="cargarSueldos()">Cargar y Ordenar Sueldos</button>
+    <div id="resultado"></div>
+</div>
+
+<script>
+    function cargarSueldos() {
+        let sueldos = [];
+        let sueldo;
+
+        while ((sueldo = parseFloat(prompt("Ingrese sueldo (0 para terminar):"))) !== 0) {
+            sueldos.push(sueldo);
+        }
+
+        sueldos.sort((a, b) => b - a);
+
+        document.getElementById('resultado').innerHTML = "Sueldos ordenados de mayor a menor: " + sueldos.join(", ");
+    }
+</script>
+
+</body>
+</html>

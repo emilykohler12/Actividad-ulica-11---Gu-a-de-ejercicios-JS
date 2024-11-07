@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Comparar Claves</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ingresar Claves</h2>
+    <form id="claveForm">
+        <label for="clave1">Ingrese Clave:</label>
+        <input type="password" id="clave1" required><br>
+        <label for="clave2">Repita la Clave:</label>
+        <input type="password" id="clave2" required><br>
+        <button type="button" onclick="verificarClave()">Verificar</button>
+    </form>
+
+    <h3>Resultado:</h3>
+    <p id="resultado"></p>
+
+    <script>
+        function verificarClave() {
+            // Obtener las claves ingresadas
+            var clave1 = document.getElementById("clave1").value;
+            var clave2 = document.getElementById("clave2").value;
+
+            // Comparar las claves y mostrar el resultado
+            if (clave1 === clave2) {
+                document.getElementById("resultado").innerHTML = "Las claves son iguales";
+            } else {
+                document.getElementById("resultado").innerHTML = "Las claves no coinciden";
+            }
+        }
+    </script>
+</body>
+</html>

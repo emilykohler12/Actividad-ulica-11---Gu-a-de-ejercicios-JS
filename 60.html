@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mostrar Palabras en Líneas Separadas</title>
+</head>
+<body>
+    <h2>Mostrar cada palabra en una línea separada</h2>
+    <button onclick="mostrarPalabras()">Ingresar Oración</button>
+    <div id="resultado"></div>
+
+    <script>
+        function mostrarPalabras() {
+            const oracion = prompt("Ingrese una oración:");
+            if (!oracion) return;
+
+            const palabras = oracion.split(" ");
+            let resultadoHTML = palabras.map(palabra => `<p>${palabra}</p>`).join("");
+            document.getElementById("resultado").innerHTML = resultadoHTML;
+        }
+    </script>
+</body>
+</html>

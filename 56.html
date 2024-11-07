@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Búsqueda de Clave en Texto</title>
+</head>
+<body>
+    <h2>Buscar una Clave en un Texto</h2>
+    <button onclick="buscarClave()">Comenzar</button>
+    <p id="resultado"></p>
+
+    <script>
+        function buscarClave() {
+            const texto = prompt("Ingrese un texto:");
+            const clave = prompt("Ingrese la clave a buscar:");
+            const posicion = texto.indexOf(clave);
+
+            if (posicion !== -1) {
+                document.getElementById("resultado").innerText = `La clave fue encontrada en la posición: ${posicion}`;
+            } else {
+                document.getElementById("resultado").innerText = "La clave no fue encontrada en el texto.";
+            }
+        }
+    </script>
+</body>
+</html>

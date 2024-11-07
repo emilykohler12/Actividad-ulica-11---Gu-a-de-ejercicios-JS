@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleccionar Deportes</title>
+</head>
+<body>
+    <h2>Selecciona los deportes que practicas</h2>
+
+    <label><input type="checkbox" id="futbol"> Fútbol</label><br>
+    <label><input type="checkbox" id="basket"> Basket</label><br>
+    <label><input type="checkbox" id="tenis"> Tenis</label><br>
+
+    <button onclick="mostrarDeportes()">Mostrar Deportes</button>
+
+    <p id="resultadoDeportes"></p>
+
+    <script>
+        function mostrarDeportes() {
+            let deportes = [];
+            if (document.getElementById("futbol").checked) deportes.push("Fútbol");
+            if (document.getElementById("basket").checked) deportes.push("Basket");
+            if (document.getElementById("tenis").checked) deportes.push("Tenis");
+
+            document.getElementById("resultadoDeportes").textContent = 
+                deportes.length > 0 ? `Deportes seleccionados: ${deportes.join(", ")}` : "No seleccionaste ningún deporte.";
+        }
+    </script>
+</body>
+</html>

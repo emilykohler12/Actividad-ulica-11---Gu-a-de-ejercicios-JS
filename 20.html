@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Serie de Términos</title>
+</head>
+<body>
+    <h2>Serie de Términos: 11 - 22 - 33 - 44 - ...</h2>
+    <button onclick="imprimirSerie()">Mostrar Serie</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function imprimirSerie() {
+            var serie = "";
+            for (var i = 1; i <= 25; i++) {
+                serie += (11 * i) + " ";
+            }
+            document.getElementById("resultado").innerHTML = serie;
+        }
+    </script>
+</body>
+</html>

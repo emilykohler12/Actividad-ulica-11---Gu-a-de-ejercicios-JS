@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Operaciones con String</title>
+</head>
+<body>
+    <h2>Operaciones con un String ingresado</h2>
+    <button onclick="operacionesString()">Ingresar String</button>
+    <div id="resultado"></div>
+
+    <script>
+        function operacionesString() {
+            const texto = prompt("Ingrese un texto:");
+            if (!texto) return;
+
+            let resultado = `
+                <p>Primera mitad de los caracteres: ${texto.slice(0, Math.floor(texto.length / 2))}</p>
+                <p>Último carácter: ${texto.slice(-1)}</p>
+                <p>Texto en reversa: ${texto.split("").reverse().join("")}</p>
+                <p>Texto con guiones: ${texto.split("").join("-")}</p>
+                <p>Cantidad de vocales: ${contarVocales(texto)}</p>
+            `;
+            document.getElementById("resultado").innerHTML = resultado;
+        }
+
+        function contarVocales(texto) {
+            const vocales = "aeiouAEIOU";
+            let count = 0;
+            for (let char of texto) {
+                if (vocales.includes(char)) count++;
+            }
+            return count;
+        }
+    </script>
+</body>
+</html>

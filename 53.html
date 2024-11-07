@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Raíz Cuadrada</title>
+</head>
+<body>
+    <h2>Calcular la Raíz Cuadrada</h2>
+    <button onclick="calcularRaizCuadrada()">Calcular Raíz Cuadrada</button>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularRaizCuadrada() {
+            const numero = parseFloat(prompt("Ingrese un número:"));
+            if (numero < 0) {
+                document.getElementById("resultado").innerText = "No se puede calcular la raíz cuadrada de un número negativo.";
+            } else {
+                const raiz = Math.sqrt(numero);
+                document.getElementById("resultado").innerText = `La raíz cuadrada de ${numero} es: ${raiz.toFixed(2)}`;
+            }
+        }
+    </script>
+</body>
+</html>

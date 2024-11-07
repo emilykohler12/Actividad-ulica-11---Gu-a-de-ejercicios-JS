@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase Persona y Empresa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin: 20px;
+        }
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Comprobación de edad para ingresar a una empresa</h2>
+    <button onclick="verificarPersonas()">Verificar Ingreso</button>
+    <p id="resultado"></p>
+</div>
+
+<script>
+    class Persona {
+        constructor(nombre, edad) {
+            this.nombre = nombre;
+            this.edad = edad;
+        }
+    }
+
+    class Empresa {
+        constructor(edadTope) {
+            this.edadTope = edadTope;
+        }
+
+        puedeIngresar(persona) {
+            return persona.edad <= this.edadTope;
+        }
+    }
+
+    function verificarPersonas() {
+        let persona1 = new Persona("Juan", 45);
+        let persona2 = new Persona("Ana", 62);
+        let persona3 = new Persona("Luis", 58);
+        let empresa = new Empresa(60);
+
+        let inhabilitados = 0;
+        [persona1, persona2, persona3].forEach(persona => {
+            if (!empresa.puedeIngresar(persona)) {
+                inhabilitados++;
+            }
+        });
+
+        document.getElementById('resultado').innerText = 'Cantidad de personas inhabilitadas para ingresar: ' + inhabilitados;
+    }
+</script>
+
+</body>
+</html>

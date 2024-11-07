@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ordenar Tres Números</title>
+</head>
+<body>
+    <h2>Ordenar Tres Números de Menor a Mayor</h2>
+    <button onclick="ordenarTresNumeros()">Ordenar Números</button>
+    <p id="resultado"></p>
+
+    <script>
+        function ordenarTresNumeros() {
+            let num1 = parseInt(prompt("Ingrese el primer número:"));
+            let num2 = parseInt(prompt("Ingrese el segundo número:"));
+            let num3 = parseInt(prompt("Ingrese el tercer número:"));
+            let numeros = [num1, num2, num3].sort((a, b) => a - b);
+            document.getElementById("resultado").innerText = "Ordenados: " + numeros.join(", ");
+        }
+    </script>
+</body>
+</html>

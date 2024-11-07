@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+<body>
+    <script>
+        const sueldoBruto = parseFloat(prompt("Ingresa el sueldo bruto del trabajador:"));
+
+        let descuento;
+        if (sueldoBruto > 10000) {
+            descuento = sueldoBruto * 0.10;
+        } else {
+            descuento = sueldoBruto * 0.05;
+        }
+
+        const sueldoNeto = sueldoBruto - descuento;
+        alert("Sueldo neto después del descuento: " + sueldoNeto);
+    </script>
+</body>
+</html>

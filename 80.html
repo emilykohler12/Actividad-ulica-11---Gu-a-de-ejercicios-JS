@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase Suma</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin: 20px;
+        }
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Suma de dos valores</h2>
+    <button onclick="calcularSuma()">Calcular Suma</button>
+    <p id="resultado"></p>
+</div>
+
+<script>
+    class Suma {
+        constructor() {
+            this.valor1 = 0;
+            this.valor2 = 0;
+        }
+
+        cargarValor1(valor) {
+            this.valor1 = valor;
+        }
+
+        cargarValor2(valor) {
+            this.valor2 = valor;
+        }
+
+        retornarResultado() {
+            return this.valor1 + this.valor2;
+        }
+    }
+
+    function calcularSuma() {
+        let s = new Suma();
+        s.cargarValor1(10);
+        s.cargarValor2(20);
+        document.getElementById('resultado').innerText = 'La suma de los dos valores es: ' + s.retornarResultado();
+    }
+</script>
+
+</body>
+</html>

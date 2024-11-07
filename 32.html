@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Procesamiento de Censo</title>
+    <style>
+        .container {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Procesamiento de Censo</h2>
+        <button onclick="procesarCenso()">Comenzar</button>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        function procesarCenso() {
+            let totalPersonas = 0;
+            let totalVarones = 0;
+            let totalMujeres = 0;
+            let varonesEdad16a65 = 0;
+
+            while (true) {
+                let documento = parseInt(prompt("Ingrese el número de documento (0 para finalizar):"));
+                if (documento === 0) break;
+
+                let edad = parseInt(prompt("Ingrese la edad:"));
+                let sexo = prompt("Ingrese el sexo ('femenino' o 'masculino'):").toLowerCase();
+
+                totalPersonas++;
+
+                if (sexo === "masculino") {
+                    totalVarones++;
+                    if (edad >= 16 && edad <= 65) {
+                        varonesEdad16a65++;
+                    }
+                } else if (sexo === "femenino") {
+                    totalMujeres++;
+                }
+            }
+
+            document.getElementById("resultado").innerHTML = `
+                Cantidad total de personas censadas: ${totalPersonas}<br>
+                Cantidad de varones: ${totalVarones}<br>
+                Cantidad de mujeres: ${totalMujeres}<br>
+                Cantidad de varones entre 16 y 65 años: ${varonesEdad16a65}
+            `;
+        }
+    </script>
+</body>
+</html>
